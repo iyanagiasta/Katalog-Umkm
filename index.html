@@ -97,7 +97,7 @@ header.atas{background:linear-gradient(160deg,#D6336C 0%,#F06C9B 100%);color:#ff
     <h2 id="h-cara">Cara pesan, gampang</h2>
     <ol>
       <li><span>1</span>Pilih jajanan, tekan tombol <b>Tambah</b></li>
-      <li><span>2</span>Tekan <b>Pesan lewat WhatsApp</b></li>
+      <li><span>2</span>Tekan <b>Tanya lewat WhatsApp</b></li>
       <li><span>3</span>Pesanan masuk ke kami, kami balas dan antar ke rumah Bunda</li>
     </ol>
   </section>
@@ -117,7 +117,7 @@ header.atas{background:linear-gradient(160deg,#D6336C 0%,#F06C9B 100%);color:#ff
 <div class="bar" id="bar" aria-live="polite">
   <div class="bar-isi">
     <div><span id="bar-n">0 item</span><b id="bar-total">Rp 0</b></div>
-    <button class="wa" id="kirim" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.3c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.3 0 .5l-.3.400-.4.400c-.1.2-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z"/></svg>Pesan lewat WhatsApp</button>
+    <button class="wa" id="kirim" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.3c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.3 0 .5l-.3.400-.4.400c-.1.2-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z"/></svg>Tanya lewat WhatsApp</button>
   </div>
 </div>
 
@@ -135,7 +135,7 @@ header.atas{background:linear-gradient(160deg,#D6336C 0%,#F06C9B 100%);color:#ff
 (function(){
   /* Isi sesuai toko: ganti nama, nomor WhatsApp, dan daftar produk di bawah ini. */
   var NAMA_TOKO="Jajan Cantik BNL";
-  var NOMOR_JASA="";   /* nomor WhatsApp pembuat katalog, contoh: 6281234567890 */
+  var NOMOR_JASA="6283805292862";   /* nomor WhatsApp pembuat katalog, contoh: 6281234567890 */
   var KAT=["Semua","Makanan","Minuman"];
   var P=[
     {id:1,f:"mie-ayam",k:"Makanan",n:"Mie ayam",d:"Mie kenyal, ayam kecap, taburan bawang goreng.",h:10000,u:"porsi",e:"🍜",w:"#FFE1EE",t:"Terlaris"},
@@ -166,15 +166,16 @@ header.atas{background:linear-gradient(160deg,#D6336C 0%,#F06C9B 100%);color:#ff
   function segar(fokus){var f=document.activeElement&&document.activeElement.getAttribute&&(document.activeElement.getAttribute("data-p")||document.activeElement.getAttribute("data-m"));
     daftar();var r=ringkas();$("bar-n").textContent=r.n+" item dipilih";$("bar-total").textContent=rp(r.t);$("bar").classList.toggle("tampil",r.n>0);
     if(f){var el=document.querySelector('[data-p="'+f+'"]');if(el)el.focus()}}
+  function wa(teks){return "https://wa.me/"+NOMOR_JASA+"?text="+encodeURIComponent(teks)}
   $("kirim").onclick=function(){
-    var r=ringkas(),b=["Halo "+NAMA_TOKO+", saya mau pesan:",""];
-    P.forEach(function(p){var q=C[p.id]||0;if(q)b.push("- "+p.n+" ("+p.u+") x "+q+" = "+rp(q*p.h))});
-    b.push("","Total: "+rp(r.t),"","Nama: ","Blok dan nomor rumah: ","Jam antar (09.00 sampai 21.00): ","","Terima kasih.");
-    $("pesan").textContent=b.join("\n");$("lembar").classList.add("buka");$("tutup").focus()};
+    var r=ringkas(),b=["Halo Kak Iyan, saya baru coba contoh katalog "+NAMA_TOKO+".","","Pilihan yang saya coba:"];
+    P.forEach(function(p){var q=C[p.id]||0;if(q)b.push("- "+p.n+" x "+q)});
+    b.push("","Saya tertarik dibuatkan katalog seperti ini untuk usaha saya. Boleh tanya-tanya dulu?","","Nama saya: ","Usaha saya: ");
+    var u=wa(b.join("\n"));if(!window.open(u,"_blank"))location.href=u};
   $("tutup").onclick=function(){$("lembar").classList.remove("buka")};
   $("lembar").onclick=function(e){if(e.target===this)this.classList.remove("buka")};
   document.addEventListener("keydown",function(e){if(e.key==="Escape")$("lembar").classList.remove("buka")});
-  $("kontak-jasa").innerHTML=NOMOR_JASA?'<a href="https://wa.me/'+NOMOR_JASA+'?text='+encodeURIComponent("Halo, saya tertarik dengan katalog online untuk usaha saya.")+'">Chat WhatsApp</a>':'(nomor WhatsApp belum diisi)';
+  $("kontak-jasa").innerHTML=NOMOR_JASA?'<a href="'+wa("Halo Kak Iyan, saya tertarik dibuatkan katalog online untuk usaha saya.")+'">Chat WhatsApp</a>':'(nomor WhatsApp belum diisi)';
   chips();daftar();
 })();
 </script>
