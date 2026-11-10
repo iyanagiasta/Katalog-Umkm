@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dapur Bu Sari – contoh katalog online</title>
+<meta name="description" content="Contoh katalog online untuk usaha rumahan. Semua nama dan harga di halaman ini fiktif.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#FFF6F7;--kartu:#fff;--tinta:#3B1F2B;--redup:#7A5C68;--garis:#F0D9DF;--beri:#B0265A;--beri-tua:#8E1B47;--hijau:#1F8A5B;--hijau-tua:#176D47;--lembut:#FBE4EA}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--beri)}
+.demo{background:var(--tinta);color:#fff;font-size:.82rem;text-align:center;padding:8px 16px}
+.demo a{color:#FFD3E0}
+.bungkus{max-width:760px;margin:0 auto;padding:0 16px}
+header.atas{background:linear-gradient(160deg,#B0265A 0%,#D6497D 100%);color:#fff;padding:28px 0 56px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo i{font-style:normal;font-size:2rem;background:#fff;border-radius:50%;width:56px;height:56px;display:grid;place-items:center}
+.logo b{font-size:1.45rem;line-height:1.15;display:block}
+.logo span{font-size:.92rem;opacity:.92}
+.sapa{margin:22px 0 0;font-size:1.12rem;line-height:1.45;max-width:30em}
+.info{margin:-34px auto 0;background:var(--kartu);border-radius:16px;padding:16px 18px;box-shadow:0 6px 22px rgba(120,30,70,.12);display:grid;gap:10px;position:relative}
+.info div{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.info b{display:block;font-size:.8rem;color:var(--redup);font-weight:600}
+.info i{font-style:normal;font-size:1.2rem;line-height:1.3}
+.cara{margin:22px 0 6px}
+.cara h2,.menu h2{font-size:1.2rem;margin:0 0 10px}
+.cara ol{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.cara li{display:flex;gap:12px;align-items:center;background:var(--kartu);border:1px solid var(--garis);border-radius:12px;padding:10px 14px;font-size:.95rem}
+.cara li span{flex:none;width:28px;height:28px;border-radius:50%;background:var(--lembut);color:var(--beri-tua);font-weight:700;display:grid;place-items:center}
+.menu{margin-top:26px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;position:sticky;top:0;background:var(--bg);z-index:5;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-size:.95rem;font-weight:600;border:1.5px solid var(--garis);background:var(--kartu);color:var(--tinta);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:44px}
+.chip[aria-pressed=true]{background:var(--beri);border-color:var(--beri);color:#fff}
+.daftar{display:grid;gap:14px;padding-bottom:130px}
+.produk{display:grid;grid-template-columns:104px 1fr;gap:14px;background:var(--kartu);border:1px solid var(--garis);border-radius:16px;padding:12px}
+.gambar{border-radius:12px;display:grid;place-items:center;font-size:3.1rem;aspect-ratio:1/1;align-self:start}
+.produk h3{margin:0;font-size:1.05rem;line-height:1.3}
+.produk p{margin:2px 0 8px;font-size:.88rem;color:var(--redup);line-height:1.4}
+.harga{font-weight:700;color:var(--beri-tua);font-size:1.05rem}
+.harga small{font-weight:400;color:var(--redup);font-size:.8rem}
+.baris{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;flex-wrap:wrap}
+.tambah{font:inherit;font-weight:700;background:var(--beri);color:#fff;border:0;border-radius:999px;padding:10px 20px;min-height:44px;cursor:pointer}
+.tambah:active{background:var(--beri-tua)}
+.jumlah{display:flex;align-items:center;gap:6px}
+.jumlah button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--beri);background:#fff;color:var(--beri-tua);font-size:1.4rem;font-weight:700;cursor:pointer;line-height:1}
+.jumlah b{min-width:30px;text-align:center;font-size:1.1rem}
+.label{display:inline-block;font-size:.72rem;font-weight:700;background:var(--lembut);color:var(--beri-tua);padding:2px 9px;border-radius:999px;margin-bottom:4px}
+.kaki{border-top:1px solid var(--garis);padding:22px 0 140px;font-size:.9rem;color:var(--redup)}
+.kaki .ajak{background:var(--kartu);border:1.5px dashed var(--beri);border-radius:14px;padding:14px 16px;margin-bottom:16px;color:var(--tinta)}
+.kaki .ajak b{color:var(--beri-tua)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--garis);box-shadow:0 -6px 20px rgba(120,30,70,.1);padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:20;transform:translateY(110%);transition:transform .25s}
+.bar.tampil{transform:none}
+.bar-isi{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.bar-isi div{flex:1;font-size:.9rem;line-height:1.3;color:var(--redup)}
+.bar-isi div b{display:block;font-size:1.15rem;color:var(--tinta)}
+.wa{font:inherit;font-weight:700;background:var(--hijau);color:#fff;border:0;border-radius:999px;padding:13px 20px;min-height:48px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.wa:active{background:var(--hijau-tua)}
+.lembar{position:fixed;inset:0;background:rgba(40,15,28,.55);z-index:30;display:none;align-items:flex-end;justify-content:center}
+.lembar.buka{display:flex}
+.lembar>div{background:#fff;border-radius:20px 20px 0 0;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:20px 18px calc(20px + env(safe-area-inset-bottom))}
+.lembar h2{margin:0 0 4px;font-size:1.2rem}
+.lembar p{margin:0 0 12px;font-size:.92rem;color:var(--redup)}
+.pesan{background:#E7F7EE;border:1px solid #BFE6D0;border-radius:14px;padding:14px;white-space:pre-wrap;font-size:.95rem;line-height:1.5}
+.catatan{background:var(--lembut);border-radius:12px;padding:10px 12px;font-size:.88rem;margin:12px 0;color:var(--tinta)}
+.tutup{font:inherit;font-weight:600;background:#fff;color:var(--beri-tua);border:1.5px solid var(--beri);border-radius:999px;padding:12px 20px;min-height:48px;width:100%;cursor:pointer;margin-top:4px}
+:focus-visible{outline:3px solid #1F6FEB;outline-offset:2px}
+@media (min-width:600px){.daftar{grid-template-columns:1fr 1fr}.produk{grid-template-columns:1fr}.gambar{aspect-ratio:16/9;font-size:3.6rem}.info{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Ini <b>contoh katalog</b>. Nama toko, produk, dan harga di sini fiktif.</div>
+
+<header class="atas">
+  <div class="bungkus">
+    <div class="logo"><i aria-hidden="true">🧁</i><div><b>Dapur Bu Sari</b><span>Kue rumahan, dibuat segar tiap hari</span></div></div>
+    <p class="sapa">Halo, Bunda! Silakan pilih kue kesukaan keluarga. Pesan tinggal klik, langsung masuk ke WhatsApp kami.</p>
+  </div>
+</header>
+
+<main class="bungkus">
+  <section class="info" aria-label="Info toko">
+    <div><i aria-hidden="true">🕖</i><span><b>Jam buka</b>Senin sampai Sabtu, 07.00 sampai 17.00</span></div>
+    <div><i aria-hidden="true">🛵</i><span><b>Antar</b>Dalam kota, ongkos sesuai jarak</span></div>
+    <div><i aria-hidden="true">📅</i><span><b>Pesanan banyak</b>Pesan satu hari sebelumnya</span></div>
+  </section>
+
+  <section class="cara" aria-labelledby="h-cara">
+    <h2 id="h-cara">Cara pesan, gampang</h2>
+    <ol>
+      <li><span>1</span>Pilih kue, tekan tombol <b>Tambah</b></li>
+      <li><span>2</span>Tekan <b>Pesan lewat WhatsApp</b></li>
+      <li><span>3</span>Pesanan masuk ke kami, kami balas untuk konfirmasi</li>
+    </ol>
+  </section>
+
+  <section class="menu" aria-labelledby="h-menu">
+    <h2 id="h-menu">Pilih kue</h2>
+    <div class="chips" id="chips" role="group" aria-label="Kategori"></div>
+    <div class="daftar" id="daftar"></div>
+  </section>
+
+  <footer class="kaki">
+    <div class="ajak">Ingin katalog seperti ini untuk usaha Ibu? Foto, harga, dan nama toko Ibu sendiri, bisa dibuka dari HP dan dibagikan lewat satu tautan.<br><b>Hubungi pembuatnya:</b> <span id="kontak-jasa"></span></div>
+    Contoh katalog ini dibuat oleh Moch Rosyihani. Semua isi fiktif.
+  </footer>
+</main>
+
+<div class="bar" id="bar" aria-live="polite">
+  <div class="bar-isi">
+    <div><span id="bar-n">0 kue</span><b id="bar-total">Rp 0</b></div>
+    <button class="wa" id="kirim" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.3c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.3 0 .5l-.3.400-.4.400c-.1.2-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z"/></svg>Pesan lewat WhatsApp</button>
+  </div>
+</div>
+
+<div class="lembar" id="lembar" role="dialog" aria-modal="true" aria-labelledby="l-judul">
+  <div>
+    <h2 id="l-judul">Pesanan Ibu siap dikirim</h2>
+    <p>Beginilah pesan yang akan masuk ke WhatsApp kami:</p>
+    <div class="pesan" id="pesan"></div>
+    <div class="catatan">Ini hanya contoh. Di toko yang asli, tombol ini langsung membuka WhatsApp pemilik toko dengan pesan seperti di atas, tinggal tekan kirim.</div>
+    <button class="tutup" id="tutup" type="button">Kembali ke daftar kue</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* Isi sesuai toko: ganti nama, nomor WhatsApp, dan daftar produk di bawah ini. */
+  var NAMA_TOKO="Dapur Bu Sari";
+  var NOMOR_JASA="";   /* nomor WhatsApp pembuat katalog, contoh: 6281234567890 */
+  var KAT=["Semua","Kue basah","Kue kering","Paket"];
+  var P=[
+    {id:1,k:"Kue basah",n:"Bolu kukus pelangi",d:"Lembut, manis pas, anak-anak suka.",h:15000,u:"isi 6",e:"🧁",w:"#FFE3EC",t:"Terlaris"},
+    {id:2,k:"Kue basah",n:"Risoles ragout ayam",d:"Kulit tipis renyah, isi ayam dan sayur.",h:18000,u:"isi 5",e:"🥟",w:"#FFF0D9"},
+    {id:3,k:"Kue basah",n:"Lemper ayam",d:"Ketan gurih dengan isian ayam suwir.",h:12000,u:"isi 5",e:"🍙",w:"#E6F4E8"},
+    {id:4,k:"Kue basah",n:"Brownies panggang",d:"Cokelat pekat, bagian atas renyah.",h:45000,u:"loyang kecil",e:"🍫",w:"#EADBD3",t:"Favorit"},
+    {id:5,k:"Kue kering",n:"Nastar keju",d:"Selai nanas buatan sendiri, lumer di mulut.",h:85000,u:"toples",e:"🍪",w:"#FFEFD0"},
+    {id:6,k:"Kue kering",n:"Kastengel",d:"Keju gurih, cocok untuk suguhan tamu.",h:90000,u:"toples",e:"🧀",w:"#FFF3C9"},
+    {id:7,k:"Kue kering",n:"Putri salju",d:"Lembut, bertabur gula halus.",h:70000,u:"toples",e:"❄️",w:"#E6F1FB"},
+    {id:8,k:"Paket",n:"Paket arisan",d:"Isi campur kue basah, untuk 20 orang.",h:300000,u:"20 kotak",e:"🎁",w:"#F5E1F3",t:"Hemat"},
+    {id:9,k:"Paket",n:"Paket syukuran",d:"Nasi kotak mini dan kue, untuk 10 orang.",h:150000,u:"10 kotak",e:"🍱",w:"#E4EEF7"}
+  ];
+  var C={},kat="Semua",$=function(i){return document.getElementById(i)};
+  function rp(v){return "Rp "+String(v).replace(/\B(?=(\d{3})+(?!\d))/g,".")}
+  function chips(){$("chips").innerHTML=KAT.map(function(k){return '<button class="chip" type="button" data-k="'+k+'" aria-pressed="'+(k===kat)+'">'+k+'</button>'}).join("");
+    [].forEach.call(document.querySelectorAll(".chip"),function(b){b.onclick=function(){kat=b.getAttribute("data-k");chips();daftar()}})}
+  function daftar(){
+    $("daftar").innerHTML=P.filter(function(p){return kat==="Semua"||p.k===kat}).map(function(p){
+      var q=C[p.id]||0;
+      var aksi=q?'<div class="jumlah"><button type="button" data-m="'+p.id+'" aria-label="Kurangi '+p.n+'">&minus;</button><b aria-live="polite">'+q+'</b><button type="button" data-p="'+p.id+'" aria-label="Tambah '+p.n+'">+</button></div>':'<button class="tambah" type="button" data-p="'+p.id+'">Tambah</button>';
+      return '<article class="produk"><div class="gambar" style="background:'+p.w+'" aria-hidden="true">'+p.e+'</div><div>'+(p.t?'<span class="label">'+p.t+'</span>':'')+'<h3>'+p.n+'</h3><p>'+p.d+'</p><div class="baris"><span class="harga">'+rp(p.h)+' <small>/ '+p.u+'</small></span>'+aksi+'</div></div></article>'}).join("");
+    [].forEach.call(document.querySelectorAll("[data-p]"),function(b){b.onclick=function(){var i=b.getAttribute("data-p");C[i]=(C[i]||0)+1;segar(i)}});
+    [].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.onclick=function(){var i=b.getAttribute("data-m");C[i]=Math.max(0,(C[i]||0)-1);if(!C[i])delete C[i];segar(i)}});
+  }
+  function ringkas(){var n=0,t=0;P.forEach(function(p){var q=C[p.id]||0;n+=q;t+=q*p.h});return {n:n,t:t}}
+  function segar(fokus){var f=document.activeElement&&document.activeElement.getAttribute&&(document.activeElement.getAttribute("data-p")||document.activeElement.getAttribute("data-m"));
+    daftar();var r=ringkas();$("bar-n").textContent=r.n+" kue dipilih";$("bar-total").textContent=rp(r.t);$("bar").classList.toggle("tampil",r.n>0);
+    if(f){var el=document.querySelector('[data-p="'+f+'"]');if(el)el.focus()}}
+  $("kirim").onclick=function(){
+    var r=ringkas(),b=["Halo "+NAMA_TOKO+", saya mau pesan:",""];
+    P.forEach(function(p){var q=C[p.id]||0;if(q)b.push("- "+p.n+" ("+p.u+") x "+q+" = "+rp(q*p.h))});
+    b.push("","Total: "+rp(r.t),"","Nama: ","Alamat antar / ambil sendiri: ","Tanggal dibutuhkan: ","","Terima kasih.");
+    $("pesan").textContent=b.join("\n");$("lembar").classList.add("buka");$("tutup").focus()};
+  $("tutup").onclick=function(){$("lembar").classList.remove("buka")};
+  $("lembar").onclick=function(e){if(e.target===this)this.classList.remove("buka")};
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")$("lembar").classList.remove("buka")});
+  $("kontak-jasa").innerHTML=NOMOR_JASA?'<a href="https://wa.me/'+NOMOR_JASA+'?text='+encodeURIComponent("Halo, saya tertarik dengan katalog online untuk usaha saya.")+'">Chat WhatsApp</a>':'(nomor WhatsApp belum diisi)';
+  chips();daftar();
+})();
+</script>
+</body>
+</html>
