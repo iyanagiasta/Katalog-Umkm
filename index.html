@@ -158,7 +158,7 @@ header.atas{background:linear-gradient(160deg,#D6336C 0%,#F06C9B 100%);color:#ff
     $("daftar").innerHTML=P.filter(function(p){return kat==="Semua"||p.k===kat}).map(function(p){
       var q=C[p.id]||0;
       var aksi=q?'<div class="jumlah"><button type="button" data-m="'+p.id+'" aria-label="Kurangi '+p.n+'">&minus;</button><b aria-live="polite">'+q+'</b><button type="button" data-p="'+p.id+'" aria-label="Tambah '+p.n+'">+</button></div>':'<button class="tambah" type="button" data-p="'+p.id+'">Tambah</button>';
-      return '<article class="produk"><div class="gambar" style="background:'+p.w+'" aria-hidden="true"><span>'+p.e+'</span><img src="foto/'+p.f+'.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div>'+(p.t?'<span class="label">'+p.t+'</span>':'')+'<h3>'+p.n+'</h3><p>'+p.d+'</p><div class="baris"><span class="harga">'+rp(p.h)+' <small>/ '+p.u+'</small></span>'+aksi+'</div></div></article>'}).join("");
+      return '<article class="produk"><div class="gambar" style="background:'+p.w+'" aria-hidden="true"><span>'+p.e+'</span><img src="'+p.f+'.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div>'+(p.t?'<span class="label">'+p.t+'</span>':'')+'<h3>'+p.n+'</h3><p>'+p.d+'</p><div class="baris"><span class="harga">'+rp(p.h)+' <small>/ '+p.u+'</small></span>'+aksi+'</div></div></article>'}).join("");
     [].forEach.call(document.querySelectorAll("[data-p]"),function(b){b.onclick=function(){var i=b.getAttribute("data-p");C[i]=(C[i]||0)+1;segar(i)}});
     [].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.onclick=function(){var i=b.getAttribute("data-m");C[i]=Math.max(0,(C[i]||0)-1);if(!C[i])delete C[i];segar(i)}});
   }
