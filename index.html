@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Dapur Bu Sari – contoh katalog online</title>
-<meta name="description" content="Contoh katalog online untuk usaha rumahan. Semua nama dan harga di halaman ini fiktif.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%A7%81%3C/text%3E%3C/svg%3E">
+<title>Jajan Cantik BNL – contoh katalog online</title>
+<meta name="description" content="Contoh katalog jajanan untuk perumahan. Semua nama dan harga di halaman ini fiktif.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8D%A7%3C/text%3E%3C/svg%3E">
 <style>
-:root{--bg:#FFF6F7;--kartu:#fff;--tinta:#3B1F2B;--redup:#7A5C68;--garis:#F0D9DF;--beri:#B0265A;--beri-tua:#8E1B47;--hijau:#1F8A5B;--hijau-tua:#176D47;--lembut:#FBE4EA}
+:root{--bg:#FFF2F7;--kartu:#fff;--tinta:#4A1F36;--redup:#85586E;--garis:#F6D5E3;--beri:#D6336C;--beri-tua:#B0245A;--hijau:#1F8A5B;--hijau-tua:#176D47;--lembut:#FFE1EE}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
@@ -16,13 +16,14 @@ a{color:var(--beri)}
 .demo{background:var(--tinta);color:#fff;font-size:.82rem;text-align:center;padding:8px 16px}
 .demo a{color:#FFD3E0}
 .bungkus{max-width:760px;margin:0 auto;padding:0 16px}
-header.atas{background:linear-gradient(160deg,#B0265A 0%,#D6497D 100%);color:#fff;padding:28px 0 56px}
+header.atas{background:linear-gradient(160deg,#D6336C 0%,#F06C9B 100%);color:#fff;padding:28px 0 56px}
 .logo{display:flex;align-items:center;gap:12px}
 .logo i{font-style:normal;font-size:2rem;background:#fff;border-radius:50%;width:56px;height:56px;display:grid;place-items:center}
 .logo b{font-size:1.45rem;line-height:1.15;display:block}
 .logo span{font-size:.92rem;opacity:.92}
 .sapa{margin:22px 0 0;font-size:1.12rem;line-height:1.45;max-width:30em}
-.info{margin:-34px auto 0;background:var(--kartu);border-radius:16px;padding:16px 18px;box-shadow:0 6px 22px rgba(120,30,70,.12);display:grid;gap:10px;position:relative}
+.ongkir{display:inline-block;margin:16px 0 0;background:#fff;color:var(--beri-tua);font-weight:700;font-size:.95rem;padding:8px 16px;border-radius:999px;box-shadow:0 3px 10px rgba(120,20,60,.18)}
+.info{margin:-34px auto 0;background:var(--kartu);border-radius:16px;padding:16px 18px;box-shadow:0 6px 22px rgba(214,51,108,.16);display:grid;gap:10px;position:relative}
 .info div{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
 .info b{display:block;font-size:.8rem;color:var(--redup);font-weight:600}
 .info i{font-style:normal;font-size:1.2rem;line-height:1.3}
@@ -71,6 +72,7 @@ header.atas{background:linear-gradient(160deg,#B0265A 0%,#D6497D 100%);color:#ff
 :focus-visible{outline:3px solid #1F6FEB;outline-offset:2px}
 @media (min-width:600px){.daftar{grid-template-columns:1fr 1fr}.produk{grid-template-columns:1fr}.gambar{aspect-ratio:16/9;font-size:3.6rem}.info{grid-template-columns:repeat(3,1fr)}}
 @media (prefers-reduced-motion:reduce){.bar{transition:none}html{scroll-behavior:auto}}
+.gambar{position:relative;overflow:hidden}.gambar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 </style>
 </head>
 <body>
@@ -78,72 +80,75 @@ header.atas{background:linear-gradient(160deg,#B0265A 0%,#D6497D 100%);color:#ff
 
 <header class="atas">
   <div class="bungkus">
-    <div class="logo"><i aria-hidden="true">🧁</i><div><b>Dapur Bu Sari</b><span>Kue rumahan, dibuat segar tiap hari</span></div></div>
-    <p class="sapa">Halo, Bunda! Silakan pilih kue kesukaan keluarga. Pesan tinggal klik, langsung masuk ke WhatsApp kami.</p>
+    <div class="logo"><i aria-hidden="true">🍧</i><div><b>Jajan Cantik BNL</b><span>Jajanan hangat dan es segar dari dapur tetangga</span></div></div>
+    <p class="sapa">Halo, Bunda! Lagi lapar atau haus? Pilih jajanan favorit keluarga, pesan tinggal klik, kami antar sampai depan rumah.</p>
+    <div class="ongkir">🛵 Gratis ongkir untuk BNL dan sekitarnya</div>
   </div>
 </header>
 
 <main class="bungkus">
   <section class="info" aria-label="Info toko">
-    <div><i aria-hidden="true">🕖</i><span><b>Jam buka</b>Senin sampai Sabtu, 07.00 sampai 17.00</span></div>
-    <div><i aria-hidden="true">🛵</i><span><b>Antar</b>Dalam kota, ongkos sesuai jarak</span></div>
-    <div><i aria-hidden="true">📅</i><span><b>Pesanan banyak</b>Pesan satu hari sebelumnya</span></div>
+    <div><i aria-hidden="true">🕘</i><span><b>Jam antar</b>Setiap hari, 09.00 sampai 21.00</span></div>
+    <div><i aria-hidden="true">🏡</i><span><b>Wilayah antar</b>Bumi Nagara Lestari (BNL) dan sekitarnya</span></div>
+    <div><i aria-hidden="true">🎀</i><span><b>Ongkir</b>Gratis, tanpa minimal belanja</span></div>
   </section>
 
   <section class="cara" aria-labelledby="h-cara">
     <h2 id="h-cara">Cara pesan, gampang</h2>
     <ol>
-      <li><span>1</span>Pilih kue, tekan tombol <b>Tambah</b></li>
+      <li><span>1</span>Pilih jajanan, tekan tombol <b>Tambah</b></li>
       <li><span>2</span>Tekan <b>Pesan lewat WhatsApp</b></li>
-      <li><span>3</span>Pesanan masuk ke kami, kami balas untuk konfirmasi</li>
+      <li><span>3</span>Pesanan masuk ke kami, kami balas dan antar ke rumah Bunda</li>
     </ol>
   </section>
 
   <section class="menu" aria-labelledby="h-menu">
-    <h2 id="h-menu">Pilih kue</h2>
+    <h2 id="h-menu">Pilih jajanan</h2>
     <div class="chips" id="chips" role="group" aria-label="Kategori"></div>
     <div class="daftar" id="daftar"></div>
   </section>
 
   <footer class="kaki">
-    <div class="ajak">Ingin katalog seperti ini untuk usaha Ibu? Foto, harga, dan nama toko Ibu sendiri, bisa dibuka dari HP dan dibagikan lewat satu tautan.<br><b>Hubungi pembuatnya:</b> <span id="kontak-jasa"></span></div>
+    <div class="ajak">Ingin katalog seperti ini untuk usaha Ibu? Foto, harga, dan nama usaha Ibu sendiri, bisa dibuka dari HP dan dibagikan lewat satu tautan.<br><b>Hubungi pembuatnya:</b> <span id="kontak-jasa"></span></div>
     Contoh katalog ini dibuat oleh Moch Rosyihani. Semua isi fiktif.
   </footer>
 </main>
 
 <div class="bar" id="bar" aria-live="polite">
   <div class="bar-isi">
-    <div><span id="bar-n">0 kue</span><b id="bar-total">Rp 0</b></div>
+    <div><span id="bar-n">0 item</span><b id="bar-total">Rp 0</b></div>
     <button class="wa" id="kirim" type="button"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.3c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.3 0 .5l-.3.400-.4.400c-.1.2-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z"/></svg>Pesan lewat WhatsApp</button>
   </div>
 </div>
 
 <div class="lembar" id="lembar" role="dialog" aria-modal="true" aria-labelledby="l-judul">
   <div>
-    <h2 id="l-judul">Pesanan Ibu siap dikirim</h2>
+    <h2 id="l-judul">Pesanan Bunda siap dikirim</h2>
     <p>Beginilah pesan yang akan masuk ke WhatsApp kami:</p>
     <div class="pesan" id="pesan"></div>
     <div class="catatan">Ini hanya contoh. Di toko yang asli, tombol ini langsung membuka WhatsApp pemilik toko dengan pesan seperti di atas, tinggal tekan kirim.</div>
-    <button class="tutup" id="tutup" type="button">Kembali ke daftar kue</button>
+    <button class="tutup" id="tutup" type="button">Kembali ke daftar jajanan</button>
   </div>
 </div>
 
 <script>
 (function(){
   /* Isi sesuai toko: ganti nama, nomor WhatsApp, dan daftar produk di bawah ini. */
-  var NAMA_TOKO="Dapur Bu Sari";
+  var NAMA_TOKO="Jajan Cantik BNL";
   var NOMOR_JASA="";   /* nomor WhatsApp pembuat katalog, contoh: 6281234567890 */
-  var KAT=["Semua","Kue basah","Kue kering","Paket"];
+  var KAT=["Semua","Makanan","Minuman"];
   var P=[
-    {id:1,k:"Kue basah",n:"Bolu kukus pelangi",d:"Lembut, manis pas, anak-anak suka.",h:15000,u:"isi 6",e:"🧁",w:"#FFE3EC",t:"Terlaris"},
-    {id:2,k:"Kue basah",n:"Risoles ragout ayam",d:"Kulit tipis renyah, isi ayam dan sayur.",h:18000,u:"isi 5",e:"🥟",w:"#FFF0D9"},
-    {id:3,k:"Kue basah",n:"Lemper ayam",d:"Ketan gurih dengan isian ayam suwir.",h:12000,u:"isi 5",e:"🍙",w:"#E6F4E8"},
-    {id:4,k:"Kue basah",n:"Brownies panggang",d:"Cokelat pekat, bagian atas renyah.",h:45000,u:"loyang kecil",e:"🍫",w:"#EADBD3",t:"Favorit"},
-    {id:5,k:"Kue kering",n:"Nastar keju",d:"Selai nanas buatan sendiri, lumer di mulut.",h:85000,u:"toples",e:"🍪",w:"#FFEFD0"},
-    {id:6,k:"Kue kering",n:"Kastengel",d:"Keju gurih, cocok untuk suguhan tamu.",h:90000,u:"toples",e:"🧀",w:"#FFF3C9"},
-    {id:7,k:"Kue kering",n:"Putri salju",d:"Lembut, bertabur gula halus.",h:70000,u:"toples",e:"❄️",w:"#E6F1FB"},
-    {id:8,k:"Paket",n:"Paket arisan",d:"Isi campur kue basah, untuk 20 orang.",h:300000,u:"20 kotak",e:"🎁",w:"#F5E1F3",t:"Hemat"},
-    {id:9,k:"Paket",n:"Paket syukuran",d:"Nasi kotak mini dan kue, untuk 10 orang.",h:150000,u:"10 kotak",e:"🍱",w:"#E4EEF7"}
+    {id:1,f:"mie-ayam",k:"Makanan",n:"Mie ayam",d:"Mie kenyal, ayam kecap, taburan bawang goreng.",h:10000,u:"porsi",e:"🍜",w:"#FFE1EE",t:"Terlaris"},
+    {id:2,f:"bakso",k:"Makanan",n:"Bakso",d:"Bakso kuah gurih dengan mie dan sambal.",h:10000,u:"porsi",e:"🥣",w:"#FFE9DD",t:"Favorit"},
+    {id:3,f:"seblak",k:"Makanan",n:"Seblak",d:"Kerupuk kenyal, pedasnya bisa diatur.",h:10000,u:"porsi",e:"🌶️",w:"#FFDDE3"},
+    {id:4,f:"pempek",k:"Makanan",n:"Pempek",d:"Ikan gurih dengan kuah cuko asam manis pedas.",h:10000,u:"isi 3",e:"🐟",w:"#FFEFD9"},
+    {id:5,f:"batagor",k:"Makanan",n:"Batagor",d:"Digoreng garing, siram bumbu kacang.",h:10000,u:"porsi",e:"🥟",w:"#FBE3F2"},
+    {id:6,f:"cilok",k:"Makanan",n:"Cilok",d:"Kenyal, bumbu kacang pedas manis.",h:5000,u:"porsi",e:"🍡",w:"#F7E0F5"},
+    {id:7,f:"es-teh",k:"Minuman",n:"Es teh manis",d:"Segar, manisnya pas.",h:5000,u:"gelas",e:"🧋",w:"#FFE6D2"},
+    {id:8,f:"es-jeruk",k:"Minuman",n:"Es jeruk",d:"Jeruk peras asli, dingin.",h:5000,u:"gelas",e:"🍊",w:"#FFEBCF"},
+    {id:9,f:"kopi-susu",k:"Minuman",n:"Es kopi susu",d:"Kopi, susu, dan gula aren.",h:5000,u:"gelas",e:"☕",w:"#F3E1D8",t:"Favorit"},
+    {id:10,f:"es-coklat",k:"Minuman",n:"Es cokelat",d:"Cokelat manis, disukai anak-anak.",h:5000,u:"gelas",e:"🍫",w:"#F1DDDD"},
+    {id:11,f:"es-buah",k:"Minuman",n:"Es buah",d:"Aneka buah, sirup, dan susu.",h:5000,u:"gelas",e:"🍧",w:"#FFDDEA"}
   ];
   var C={},kat="Semua",$=function(i){return document.getElementById(i)};
   function rp(v){return "Rp "+String(v).replace(/\B(?=(\d{3})+(?!\d))/g,".")}
@@ -153,18 +158,18 @@ header.atas{background:linear-gradient(160deg,#B0265A 0%,#D6497D 100%);color:#ff
     $("daftar").innerHTML=P.filter(function(p){return kat==="Semua"||p.k===kat}).map(function(p){
       var q=C[p.id]||0;
       var aksi=q?'<div class="jumlah"><button type="button" data-m="'+p.id+'" aria-label="Kurangi '+p.n+'">&minus;</button><b aria-live="polite">'+q+'</b><button type="button" data-p="'+p.id+'" aria-label="Tambah '+p.n+'">+</button></div>':'<button class="tambah" type="button" data-p="'+p.id+'">Tambah</button>';
-      return '<article class="produk"><div class="gambar" style="background:'+p.w+'" aria-hidden="true">'+p.e+'</div><div>'+(p.t?'<span class="label">'+p.t+'</span>':'')+'<h3>'+p.n+'</h3><p>'+p.d+'</p><div class="baris"><span class="harga">'+rp(p.h)+' <small>/ '+p.u+'</small></span>'+aksi+'</div></div></article>'}).join("");
+      return '<article class="produk"><div class="gambar" style="background:'+p.w+'" aria-hidden="true"><span>'+p.e+'</span><img src="foto/'+p.f+'.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div>'+(p.t?'<span class="label">'+p.t+'</span>':'')+'<h3>'+p.n+'</h3><p>'+p.d+'</p><div class="baris"><span class="harga">'+rp(p.h)+' <small>/ '+p.u+'</small></span>'+aksi+'</div></div></article>'}).join("");
     [].forEach.call(document.querySelectorAll("[data-p]"),function(b){b.onclick=function(){var i=b.getAttribute("data-p");C[i]=(C[i]||0)+1;segar(i)}});
     [].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.onclick=function(){var i=b.getAttribute("data-m");C[i]=Math.max(0,(C[i]||0)-1);if(!C[i])delete C[i];segar(i)}});
   }
   function ringkas(){var n=0,t=0;P.forEach(function(p){var q=C[p.id]||0;n+=q;t+=q*p.h});return {n:n,t:t}}
   function segar(fokus){var f=document.activeElement&&document.activeElement.getAttribute&&(document.activeElement.getAttribute("data-p")||document.activeElement.getAttribute("data-m"));
-    daftar();var r=ringkas();$("bar-n").textContent=r.n+" kue dipilih";$("bar-total").textContent=rp(r.t);$("bar").classList.toggle("tampil",r.n>0);
+    daftar();var r=ringkas();$("bar-n").textContent=r.n+" item dipilih";$("bar-total").textContent=rp(r.t);$("bar").classList.toggle("tampil",r.n>0);
     if(f){var el=document.querySelector('[data-p="'+f+'"]');if(el)el.focus()}}
   $("kirim").onclick=function(){
     var r=ringkas(),b=["Halo "+NAMA_TOKO+", saya mau pesan:",""];
     P.forEach(function(p){var q=C[p.id]||0;if(q)b.push("- "+p.n+" ("+p.u+") x "+q+" = "+rp(q*p.h))});
-    b.push("","Total: "+rp(r.t),"","Nama: ","Alamat antar / ambil sendiri: ","Tanggal dibutuhkan: ","","Terima kasih.");
+    b.push("","Total: "+rp(r.t),"","Nama: ","Blok dan nomor rumah: ","Jam antar (09.00 sampai 21.00): ","","Terima kasih.");
     $("pesan").textContent=b.join("\n");$("lembar").classList.add("buka");$("tutup").focus()};
   $("tutup").onclick=function(){$("lembar").classList.remove("buka")};
   $("lembar").onclick=function(e){if(e.target===this)this.classList.remove("buka")};
